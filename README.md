@@ -66,6 +66,12 @@ root
 
 ---
 
+## 📜 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
 ⭐ If you like this project, consider giving it a star!
 
 
