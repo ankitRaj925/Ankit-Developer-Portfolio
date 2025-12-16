@@ -49,18 +49,41 @@ A modern, responsive developer portfolio built using **React + TypeScript + Vite
 ## 📂 Project Structure
 
 ```
-root
-├── components/
-│ └── ui/*.tsx
-├── screenshot/
-│ └── Home.png
-├── App.tsx
-├── index.tsx
+Ankit-Developer-Portfolio/
+│
+├── public/
+│   └── screenshots/
+│       ├── Home.png
+│       ├── air-quality-index-scale.jpg
+│       └── quickbite-home.png
+│
+├── src/
+│   ├── components/
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Skills.tsx
+│   │   │
+│   │   └── ui/
+│   │       └── GlassCard.tsx
+│   │
+│   ├── App.tsx
+│   └── main.tsx
+│
 ├── index.html
 ├── package.json
+├── package-lock.json
 ├── tsconfig.json
 ├── vite.config.ts
-└── README.md
+├── types.ts
+├── README.md
+├── LICENSE
+├── metadata.json
+├── .gitignore
+└── .env.local
 
 ```
 
