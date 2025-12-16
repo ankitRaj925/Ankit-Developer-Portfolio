@@ -4,7 +4,7 @@ A modern, responsive developer portfolio built using **React + TypeScript + Vite
 
 <p align="center">
   <a href="https://ankit-developer-portfolio.vercel.app/" target="_blank">
-    <img src="./screenshot/Home.png" alt="Portfolio Preview" width="850">
+   <img src="./public/screenshots/Home.png" alt="Portfolio Preview" width="850">
   </a>
 </p>
 
