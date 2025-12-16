@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GlassCard from './ui/GlassCard';
-import { GraduationCap, Trophy, Github } from 'lucide-react';
+import { GraduationCap, Trophy, Github, Award, CheckCircle2, ExternalLink } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const About: React.FC = () => {
             className="!rounded-[3rem] p-8 md:p-12 text-slate-600 dark:text-slate-300 leading-relaxed space-y-6 mt-8 shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 backdrop-blur-2xl bg-white/60 dark:bg-black/40 border border-white/20 dark:border-white/10"
           >
             <p className="text-lg">
-              I’m a <span className="text-slate-900 dark:text-white font-semibold">Software Developer</span> and CS graduate from <span className="text-emerald-600 dark:text-emerald-400 font-semibold">GGU Bilaspur</span>, passionate about building scalable full-stack applications. With strong foundations in <span className="italic text-slate-800 dark:text-slate-200">Java, Python, and DSA</span>, I bridge the gap between clean frontend experiences and robust backend architectures.
+              I’m a <span className="text-slate-900 dark:text-white font-semibold">Software Developer</span> and CS graduate from <span className="text-emerald-600 dark:text-emerald-400 font-semibold">Guru Ghasidas Vishwavidyalaya Bilaspur</span>, passionate about building scalable full-stack applications. With strong foundations in <span className="italic text-slate-800 dark:text-slate-200">Java, Python, and DSA</span>, I bridge the gap between clean frontend experiences and robust backend architectures.
             </p>
             <p>
               I thrive on competitive programming, having solved <span className="text-teal-600 dark:text-teal-400 font-bold">1000+ problems</span> across various platforms. My goal is to design efficient solutions and turn complex ideas into production-ready code using modern AI tools and cloud technologies.
@@ -60,7 +60,7 @@ const About: React.FC = () => {
               </a>
             </div>
 
-            {/* Education & Achievements Grid */}
+            {/* Education & CP Grid */}
             <div className="grid md:grid-cols-2 gap-6 mt-10 pt-10 border-t border-slate-200 dark:border-white/10">
               {/* Education */}
               <div className="flex items-start gap-5 p-4 rounded-3xl hover:bg-emerald-500/5 transition-colors duration-300">
@@ -80,12 +80,93 @@ const About: React.FC = () => {
                   <Trophy size={28} />
                 </div>
                 <div className="text-left">
-                  <h4 className="text-lg font-bold text-slate-800 dark:text-white mb-1">Achievements</h4>
+                  <h4 className="text-lg font-bold text-slate-800 dark:text-white mb-1">CP Achievement</h4>
                   <p className="text-slate-600 dark:text-slate-300 font-medium">Codeforces Specialist</p>
-                  <p className="text-emerald-600 dark:text-emerald-400 text-sm font-semibold mt-0.5">1000+ DSA Problems Solved</p>
+                  {/* <p className="text-emerald-600 dark:text-emerald-400 text-sm font-semibold mt-0.5">1000+ DSA Problems Solved</p> */}
                 </div>
               </div>
             </div>
+
+            {/* Certifications & Honors Section */}
+            <div className="mt-6 pt-6 border-t border-slate-200 dark:border-white/10">
+               <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 text-left flex items-center gap-3">
+                  <Award className="text-emerald-500" size={24} />
+                  <span>Certifications & Honors</span>
+               </h3>
+               
+               <div className="grid md:grid-cols-2 gap-4">
+                  {/* Oracle Gen AI */}
+                  <a 
+                    href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=B01C9CA90D2FEB9BE6C6365C80D1A7326EB67CB5E48ACAC6A812693B3A28322D" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="group p-4 rounded-2xl bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 flex items-start gap-4 text-left"
+                  >
+                     <div className="mt-1 p-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 shrink-0">
+                        <CheckCircle2 size={16} />
+                     </div>
+                     <div>
+                        <h5 className="font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors text-sm md:text-base">
+                           OCI Generative AI Professional 2025
+                        </h5>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Oracle (1Z0-1127-25)</p>
+                     </div>
+                     <ExternalLink size={14} className="ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+
+                  {/* Oracle AI Foundations */}
+                  <a 
+                    href="https://catalog-education.oracle.com/pls/certview/sharebadge?id=97EB7B7A30900D42ABD1EEED98B202DC02F51CD9157B8E333E8A84516CF11A6B" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group p-4 rounded-2xl bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 flex items-start gap-4 text-left"
+                  >
+                     <div className="mt-1 p-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 shrink-0">
+                        <CheckCircle2 size={16} />
+                     </div>
+                     <div>
+                        <h5 className="font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors text-sm md:text-base">
+                           OCI AI Foundations Associate 2025
+                        </h5>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Oracle (1Z0-1122-25)</p>
+                     </div>
+                     <ExternalLink size={14} className="ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+
+                  {/* TCS ION */}
+                  <a 
+                    href="https://drive.google.com/file/d/1Tes_SOXem2VdXxiD5PxGEwRHT6CR_-lc/view?usp=sharing" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group p-4 rounded-2xl bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 flex items-start gap-4 text-left"
+                  >
+                     <div className="mt-1 p-2 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 shrink-0">
+                        <CheckCircle2 size={16} />
+                     </div>
+                     <div>
+                        <h5 className="font-bold text-slate-800 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors text-sm md:text-base">
+                           TCS ION Young Career Edge
+                        </h5>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">15-day Career Proficiency Course</p>
+                     </div>
+                     <ExternalLink size={14} className="ml-auto text-slate-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+
+                  {/* SIH Hackathon */}
+                  <div className="p-4 rounded-2xl bg-white/40 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all duration-300 flex items-start gap-4 text-left">
+                     <div className="mt-1 p-2 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400 shrink-0">
+                        <Trophy size={16} />
+                     </div>
+                     <div>
+                        <h5 className="font-bold text-slate-800 dark:text-white text-sm md:text-base">
+                           Smart India Hackathon 2023
+                        </h5>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Team Leader (Team of 5)</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
           </GlassCard>
         </motion.div>
       </div>

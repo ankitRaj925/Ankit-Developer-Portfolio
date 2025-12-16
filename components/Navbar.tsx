@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Home, User, Code, Briefcase, Mail, Cpu, Sun, Moon, Menu, X } from 'lucide-react';
 import { NavItem } from '../types';
@@ -22,6 +22,9 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -29,6 +32,43 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScrollClose = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      window.addEventListener('scroll', handleScrollClose);
+    }
+    return () => window.removeEventListener('scroll', handleScrollClose);
+  }, [isOpen]);
+
+  // Close menu on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
+  // Active section scroll spy
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200; // Offset for better detection
@@ -92,6 +132,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
           {/* Mobile Hamburger Button */}
           {isMobile ? (
             <motion.button
+              ref={buttonRef}
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
               className={`
@@ -189,6 +230,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleTheme }) => {
       <AnimatePresence>
         {isMobile && isOpen && (
           <motion.div
+            ref={menuRef}
             initial={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
             exit={{ opacity: 0, y: -20, scale: 0.95, filter: "blur(10px)" }}

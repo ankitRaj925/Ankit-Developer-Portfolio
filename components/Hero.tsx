@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             {/* CTAs */}
             <div className="flex flex-col md:flex-row justify-center gap-6 pt-12 pb-16">
               <motion.a 
-                href="https://drive.google.com/file/d/1desTWt58TprHlq982sn3g6XhMzW8h5Gr/view?usp=sharing"
+                href="https://drive.google.com/file/d/1wMALaKX_Kur7AU-pitq4x1RDm7s7aK2Y/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
